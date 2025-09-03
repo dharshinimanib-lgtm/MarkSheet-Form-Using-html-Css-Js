@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Statement of Marks and Grades - Plain HTML</title>
+  <style>
+    nav {
+      background: rgba(0, 0, 0, 0.6);;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00bcd4;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #111;
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease;
+      }
+
+      .nav-links a {
+        padding: 1rem 2rem;
+        border-top: 1px solid #222;
+        
+      }
+
+      
+      #menu-checkbox:checked ~ .nav-links {
+        max-height: 300px;
+      }
+
+      
+      #menu-checkbox:checked + .menu-toggle .bar1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      #menu-checkbox:checked + .menu-toggle .bar2 {
+        opacity: 0;
+      }
+
+      #menu-checkbox:checked + .menu-toggle .bar3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+    }
+
+   
+    .bar1, .bar2, .bar3 {
+      height: 3px;
+      width: 25px;
+      background-color: white;
+      margin: 4px 0;
+      transition: 0.4s;
+      border-radius: 3px;
+    }
+
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbhc.edu.in%2Fbhc%2Fbhclogo-small.png&f=1&nofb=1&ipt=b79fa10c8bf0a3cd9cb3b2130a69dff04741885a78f7124ad19722b316f56330');
+    background-repeat: no-repeat;
+    background-size: 400px;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
+} 
+
+table{
+  margin-top: 50px;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <nav>
+    <div class="logo">MyProject</div>
+    
+    <input type="checkbox" id="menu-checkbox" style="display: none;">
+
+    <label for="menu-checkbox" class="menu-toggle">
+      <span class="bar1"></span>
+      <span class="bar2"></span>
+      <span class="bar3"></span>
+    </label>
+
+    <div class="nav-links">
+      <a href="./index.html">MarkSheet</a>
+      <a href="./RegisterForm.html">RegistrationForm</a>
+    </div>
+  </nav>
+
+<!-- Main -->
+<center>
+  
+  <table border="1" cellpadding="6" cellspacing="0" width="820">
+    <tr>
+      <td colspan="12" align="center">
+        
+        <center>
+          
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.MBTIJ8I9lpp8KeIgGcU7gAHaJs%3Fpid%3DApi&f=1&ipt=06de0a91c019ce0a87e1e22d16e418cd58064c9fabd98d0167c8b2c53d5ca4ce&ipo=images" alt="College Logo" width="70" height="70" />
+          <br/>
+          <font face="Times New Roman, serif" size="5"><b>BISHOP HEBER COLLEGE (AUTONOMOUS)</b></font>
+          <br/>
+          <font face="Arial" size="2">Affiliated to BHARATHIDASAN UNIVERSITY - Tiruchirappalli, Tamil Nadu, India</font>
+          <br/>
+          <font face="Arial" size="2"><b>STATEMENT OF MARKS AND GRADES</b> &nbsp;&nbsp; SEMESTER: I</font>
+        </center>
+      </td>
+    </tr>
+   
+    <tr>
+      <td colspan="4"><b>BATCH :</b> 2022-2024</td>
+      <td colspan="5" align="center"><b>STATEMENT OF MARKS AND GRADES</b></td>
+      <td colspan="3" align="right"><b>REG. No. :</b> 123567865</td>
+    </tr>
+    <tr>
+      <td colspan="2"><b>NAME :</b></td>
+      <td colspan="6">PRIYADHARSHINI B</td>
+      <td colspan="2"><b>SEMESTER :</b></td>
+      <td colspan="2">II</td>
+    </tr>
+    <tr>
+      <td colspan="2"><b>DOB :</b></td>
+      <td colspan="4">30/07/2002</td>
+      <td colspan="4"><b>PROGRAMME :</b> M.Sc., (INFORMATION TECHNOLOGY)</td>
+      <td colspan="2"></td>
+    </tr>
+    
+    <tr>
+      <td colspan="12" height="6"></td>
+    </tr>
+    
+    <tr>
+      <td width="4%" align="center"><b>S.No</b></td>
+      <td width="4%" align="center"><b>Part</b></td>
+      <td width="8%" align="center"><b>Course</b></td>
+      <td width="12%" align="center"><b>Course Code</b></td>
+      <td width="34%" align="center"><b>Course Title</b></td>
+      <td width="6%" align="center"><b>CIA<br>(25)</b></td>
+      <td width="6%" align="center"><b>ESE<br>(75)</b></td>
+      <td width="6%" align="center"><b>Total<br>(100)</b></td>
+      <td width="4%" align="center"><b>G.P.</b></td>
+      <td width="4%" align="center"><b>Grade</b></td>
+      <td width="4%" align="center"><b>Credit</b></td>
+      <td width="4%" align="center"><b>Result</b></td>
+    </tr>
+    <!-- Data rows (as in the photo) -->
+    <tr>
+      <td align="center">1</td>
+      <td align="center">I</td>
+      <td align="center">LC</td>
+      <td align="center">I16TM1L1</td>
+      <td>Database Management Systems (DBMS)</td>
+      <td align="center">22</td>
+      <td align="center">57</td>
+      <td align="center">79</td>
+      <td align="center">8</td>
+      <td align="center">A</td>
+      <td align="center">3</td>
+      <td align="center">P</td>
+    </tr>
+    <tr>
+      <td align="center">2</td>
+      <td align="center">I</td>
+      <td align="center">ELC</td>
+      <td align="center">I20EGNL1</td>
+      <td>Computer Organization & Architecture</td>
+      <td align="center">32</td>
+      <td align="center">41</td>
+      <td align="center">73</td>
+      <td align="center">8</td>
+      <td align="center">A</td>
+      <td align="center">3</td>
+      <td align="center">P</td>
+    </tr>
+    <tr>
+      <td align="center">3</td>
+      <td align="center">I</td>
+      <td align="center">CC</td>
+      <td align="center">I18CA101</td>
+      <td>Programming in java</td>
+      <td align="center">23</td>
+      <td align="center">60</td>
+      <td align="center">83</td>
+      <td align="center">9</td>
+      <td align="center">A+</td>
+      <td align="center">6</td>
+      <td align="center">P</td>
+    </tr>
+    <tr>
+      <td align="center">4</td>
+      <td align="center">I</td>
+      <td align="center">CC</td>
+      <td align="center">I18CA1P1</td>
+      <td>Communication and Computer Networks</td>
+      <td align="center">38</td>
+      <td align="center">60</td>
+      <td align="center">98</td>
+      <td align="center">10</td>
+      <td align="center">O</td>
+      <td align="center">3</td>
+      <td align="center">P</td>
+    </tr>
+    <tr>
+      <td align="center">5</td>
+      <td align="center">I</td>
+      <td align="center">AC</td>
+      <td align="center">I20MA211</td>
+      <td>Operating System</td>
+      <td align="center">23</td>
+      <td align="center">70</td>
+      <td align="center">93</td>
+      <td align="center">10</td>
+      <td align="center">O</td>
+      <td align="center">4</td>
+      <td align="center">P</td>
+    </tr>
+    <tr>
+      <td align="center">6</td>
+      <td align="center">I</td>
+      <td align="center">VLO</td>
+      <td align="center">I15VL112</td>
+      <td>Computer Organization & Architecture</td>
+      <td align="center">22</td>
+      <td align="center">45</td>
+      <td align="center">67</td>
+      <td align="center">7</td>
+      <td align="center">B+</td>
+      <td align="center">2</td>
+      <td align="center">P</td>
+    </tr>
+  
+    <tr>
+      <td colspan="12" align="center">
+        <b>Part II / Practical CIA Max: 40 &nbsp; ESE Max: 60</b>
+        <br/>--- END OF STATEMENT --- See Overleaf for Grade Points
+      </td>
+    </tr>
+   
+    <tr>
+      <td colspan="12" align="center"><b>Overall Credits: 21 / 21</b></td>
+    </tr>
+    
+    <tr><td colspan="12" height="12"></td></tr>
+    <tr>
+      <td colspan="12" align="center">
+        <table border="1" cellpadding="4" cellspacing="0" width="100%">
+          <tr>
+            <td width="50%" valign="top">
+              <b>Current Semester Performance</b>
+              <br/>
+              <table border="1" cellpadding="4" cellspacing="0" width="100%">
+                <tr>
+                  <td align="center"><b>Part</b></td>
+                  <td align="center"><b>WAM</b></td>
+                  <td align="center"><b>GPA</b></td>
+                  <td align="center"><b>GRADE</b></td>
+                  <td align="center"><b>CREDIT</b></td>
+                </tr>
+                <tr><td align="center">I</td><td align="center">79.00</td><td align="center">8.00</td><td align="center">A+</td><td align="center">3</td></tr>
+                <tr><td align="center">II</td><td align="center">73.00</td><td align="center">8.00</td><td align="center">A+</td><td align="center">3</td></tr>
+                <tr><td align="center">III</td><td align="center">89.54</td><td align="center">9.54</td><td align="center">O</td><td align="center">13</td></tr>
+                <tr><td align="center">IV</td><td align="center">67.00</td><td align="center">7.00</td><td align="center">A</td><td align="center">2</td></tr>
+              </table>
+            </td>
+            <td width="50%" valign="top">
+              <b>Cumulative Performance</b>
+              <br/>
+              <table border="1" cellpadding="4" cellspacing="0" width="100%">
+                <tr>
+                  <td align="center"><b>CWAM</b></td>
+                  <td align="center"><b>CGPA</b></td>
+                  <td align="center"><b>GRADE</b></td>
+                  <td align="center"><b>CREDIT</b></td>
+                </tr>
+                <tr><td align="center">79.00</td><td align="center">8.00</td><td align="center">A+</td><td align="center">3</td></tr>
+                <tr><td align="center">73.00</td><td align="center">8.00</td><td align="center">A+</td><td align="center">3</td></tr>
+                <tr><td align="center">89.54</td><td align="center">9.54</td><td align="center">O</td><td align="center">13</td></tr>
+                <tr><td align="center">67.00</td><td align="center">7.00</td><td align="center">A</td><td align="center">2</td></tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="12" align="left">
+        <font size="2"><b>Any correction invalidates this statement.</b></font>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="6" align="center">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.0tIar27JOtellASS2BYYIwHaHa%3Fpid%3DApi&f=1&ipt=103f6248e593a4d3e0eaa5a333674606dff86329cc059a380c9d60d08a9a3dfa&ipo=images" alt="College Seal" width="100" height="100" />
+        <br/><font size="2">College Seal</font>
+      </td>
+      <td colspan="6" align="center">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.PgE6V2R5WYVFV-5LbpLT1gHaFY%3Fpid%3DApi&f=1&ipt=5e36e698e8847c36797890a3918d68bcd60c227a64f2c45040e4743efefb26f5&ipo=images" alt="Controller Signature" width="160" height="70" />
+        <br/><font size="2"><b>CONTROLLER OF EXAMINATIONS</b></font>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="12" align="left"><b>Date of issue :</b> 16 JUN 2021</td>
+    </tr>
+  </table>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Registration Form</title>
+  <style>
+    nav {
+      background-color:rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00bcd4;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+ 
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #111;
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease;
+      }
+
+      .nav-links a {
+        padding: 1rem 2rem;
+        border-top: 1px solid #222;
+        
+      }
+
+     
+      #menu-checkbox:checked ~ .nav-links {
+        max-height: 300px;
+      }
+
+      
+      #menu-checkbox:checked + .menu-toggle .bar1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      #menu-checkbox:checked + .menu-toggle .bar2 {
+        opacity: 0;
+      }
+
+      #menu-checkbox:checked + .menu-toggle .bar3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+    }
+
+   
+    .bar1, .bar2, .bar3 {
+      height: 3px;
+      width: 25px;
+      background-color: white;
+      margin: 4px 0;
+      transition: 0.4s;
+      border-radius: 3px;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20201026/pngtree-scene-with-geometrical-forms-the-poster-model-minimal-background-render-image_437743.jpg');      background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(122).jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      
+    }
+
+    .full-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins", sans-serif;
+      overflow: hidden;
+      height: 90vh;
+      
+    }
+
+    body::before, body::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: float 8s infinite alternate;
+    }
+    body::after {
+      width: 200px;
+      height: 200px;
+      bottom: 50px;
+      right: 50px;
+      animation-duration: 10s;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-40px); }
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+      width: 550px;
+      color: white;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    label {
+      font-weight: 600;
+      margin: 10px 0 5px;
+      display: block;
+      font-size: 14px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 5px;
+      outline: none;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    select option {
+      color: black;
+    }
+
+    input:focus, select:focus {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 8px;
+      background:linear-gradient(to right, #4E342E, #FBC02D);
+      color: #333;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px #FBC02D;
+    }
+
+    .error {
+      color: #ffdddd;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+    <nav>
+    <div class="logo">MyProject</div>
+    
+   
+    <input type="checkbox" id="menu-checkbox" style="display: none;">
+
+    
+    <label for="menu-checkbox" class="menu-toggle">
+      <span class="bar1"></span>
+      <span class="bar2"></span>
+      <span class="bar3"></span>
+    </label>
+
+    
+    <div class="nav-links">
+      <a href="./index.html">MarkSheet</a>
+      <a href="./RegisterForm.html">RegistrationForm</a>
+    </div>
+  </nav>
+  <div class="full-container">
+  <div class="form-container">
+    <h2>Register</h2>
+    <form id="registrationForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" />
+      <div class="error" id="nameError"></div>
+
+      <label for="age">Age</label>
+      <input type="number" id="age" placeholder="Enter your age" min="1" />
+      <div class="error" id="ageError"></div>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+      <div class="error" id="emailError"></div>
+
+      <label for="gender">Gender</label>
+      <select id="gender">
+        <option value="">Select gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      <div class="error" id="genderError"></div>
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" />
+      <div class="error" id="dobError"></div>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" />
+      <div class="error" id="passwordError"></div>
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" placeholder="Confirm your password" />
+      <div class="error" id="confirmPasswordError"></div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  </div>
+
+ <script>
+    const form = document.getElementById('registrationForm');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const age = document.getElementById('age').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const gender = document.getElementById('gender').value;
+      const dob = document.getElementById('dob').value;
+      const password = document.getElementById('password').value.trim();
+      const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+      const nameError = document.getElementById('nameError');
+      const ageError = document.getElementById('ageError');
+      const emailError = document.getElementById('emailError');
+      const genderError = document.getElementById('genderError');
+      const dobError = document.getElementById('dobError');
+      const passwordError = document.getElementById('passwordError');
+      const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+      nameError.textContent = '';
+      ageError.textContent = '';
+      emailError.textContent = '';
+      genderError.textContent = '';
+      dobError.textContent = '';
+      passwordError.textContent = '';
+      confirmPasswordError.textContent = '';
+
+      let valid = true;
+
+      if (name.length < 3) {
+        nameError.textContent = 'Name must be at least 3 characters long.';
+        valid = false;
+      }
+
+      if (!age || age <= 0) {
+        ageError.textContent = 'Please enter a valid age.';
+        valid = false;
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailPattern.test(email)) {
+        emailError.textContent = 'Please enter a valid email.';
+        valid = false;
+      }
+
+      if (!gender) {
+        genderError.textContent = 'Please select a gender.';
+        valid = false;
+      }
+
+      if (!dob) {
+        dobError.textContent = 'Please select your date of birth.';
+        valid = false;
+      }
+
+      if (password.length < 6) {
+        passwordError.textContent = 'Password must be at least 6 characters.';
+        valid = false;
+      }
+
+      if (password !== confirmPassword) {
+        confirmPasswordError.textContent = 'Passwords do not match.';
+        valid = false;
+      }
+
+       if (valid) {
+    window.location.href = "Submit.html";
+  }
+    });
+  </script>
+</body>
+</html>
